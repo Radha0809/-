@@ -7,13 +7,15 @@ import { X } from "lucide-react";
  * editorial type, asymmetric composition, tactile photo frames, and restrained motion.
  */
 
-const HERO_IMAGE = "/assets/shreyu-purple-orchid-hero.jpg";
+const ASSET_BASE = import.meta.env.BASE_URL;
+const asset = (name: string) => `${ASSET_BASE}assets/${name}`;
+const HERO_IMAGE = asset("shreyu-purple-orchid-hero.jpg");
 const TEXTURE_IMAGE = "/manus-storage/shreyu-botanical-texture_da9314e2.jpg";
-const SEAL_IMAGE = "/assets/orchid-wax-seal-clean.png";
-const ENVELOPE_IMAGE = "/assets/envelope-home-cropped.jpg?v=3";
-const OPEN_ENVELOPE_IMAGE = "/assets/envelope-open-interior.jpg";
-const PAPER_IMAGE = "/assets/a4-letter-paper.jpg";
-const BOUQUET_IMAGE = "/assets/purple-bouquet.png";
+const SEAL_IMAGE = asset("orchid-wax-seal-clean.png");
+const ENVELOPE_IMAGE = `${asset("envelope-home-cropped.jpg")}?v=3`;
+const OPEN_ENVELOPE_IMAGE = asset("envelope-open-interior.jpg");
+const PAPER_IMAGE = asset("a4-letter-paper.jpg");
+const BOUQUET_IMAGE = asset("purple-bouquet.png");
 
 const messageParagraphs = [
   {
@@ -49,18 +51,18 @@ const messageParagraphs = [
 ];
 
 const photos = [
-  { file: "image1.jpg", src: "/assets/image1.jpg", label: "A beginning", ratio: "tall" },
-  { file: "image2.jpg", src: "/assets/image2.jpg", label: "A soft morning", ratio: "wide" },
-  { file: "image3.jpg", src: "/assets/image3.jpg", label: "The little things", ratio: "square" },
-  { file: "image4.jpg", src: "/assets/image4.jpg", label: "Somewhere golden", ratio: "tall" },
-  { file: "image5.jpg", src: "/assets/image5.jpg", label: "A day to remember", ratio: "wide" },
-  { file: "image6.jpg", src: "/assets/image6.jpg", label: "Your brightest laugh", ratio: "square" },
-  { file: "image7.jpg", src: "/assets/image7.jpg", label: "A quiet favourite", ratio: "tall" },
-  { file: "image8.jpg", src: "/assets/image8.jpg", label: "The view from here", ratio: "wide" },
-  { file: "image9.jpg", src: "/assets/image9.jpg", label: "A little magic", ratio: "square" },
-  { file: "image10.jpg", src: "/assets/image10.jpg", label: "Still blooming", ratio: "tall" },
-  { file: "image11.jpg", src: "/assets/image11.jpg", label: "A beautiful pause", ratio: "wide" },
-  { file: "image12.jpg", src: "/assets/image12.jpg", label: "For the next chapter", ratio: "square" },
+  { file: "image1.jpg", src: asset("image1.jpg"), label: "A beginning", ratio: "tall" },
+  { file: "image2.jpg", src: asset("image2.jpg"), label: "A soft morning", ratio: "wide" },
+  { file: "image3.jpg", src: asset("image3.jpg"), label: "The little things", ratio: "square" },
+  { file: "image4.jpg", src: asset("image4.jpg"), label: "Somewhere golden", ratio: "tall" },
+  { file: "image5.jpg", src: asset("image5.jpg"), label: "A day to remember", ratio: "wide" },
+  { file: "image6.jpg", src: asset("image6.jpg"), label: "Your brightest laugh", ratio: "square" },
+  { file: "image7.jpg", src: asset("image7.jpg"), label: "A quiet favourite", ratio: "tall" },
+  { file: "image8.jpg", src: asset("image8.jpg"), label: "The view from here", ratio: "wide" },
+  { file: "image9.jpg", src: asset("image9.jpg"), label: "A little magic", ratio: "square" },
+  { file: "image10.jpg", src: asset("image10.jpg"), label: "Still blooming", ratio: "tall" },
+  { file: "image11.jpg", src: asset("image11.jpg"), label: "A beautiful pause", ratio: "wide" },
+  { file: "image12.jpg", src: asset("image12.jpg"), label: "For the next chapter", ratio: "square" },
 ] as const;
 
 type Photo = (typeof photos)[number];
